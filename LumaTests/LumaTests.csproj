@@ -7,10 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Coypu" Version="3.1.1" />
     <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="4.3.0" />
+    <PackageReference Include="Gherkin" Version="26.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
     <PackageReference Include="Selenium.Support" Version="4.9.1" />
     <PackageReference Include="Selenium.WebDriver" Version="4.9.1" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="114.0.5735.9000" />
+    <PackageReference Include="SpecFlow" Version="3.9.74" />
     <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.9.40" />
     <PackageReference Include="nunit" Version="3.13.2" />
@@ -21,9 +26,7 @@
   <ItemGroup>
     <Folder Include="Drivers\" />
     <Folder Include="Features\" />
-    <Folder Include="Helpers\" />
     <Folder Include="Settings\" />
-    <Folder Include="StepDefinitions\" />
     <Folder Include="Support\" />
   </ItemGroup>
 

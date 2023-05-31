@@ -5,7 +5,8 @@ A short summary of the feature
 @tag1
 Scenario: As a User I enter a product page, choose size, color, and qty, and click on Add to Cart, next, I can confirm that the product is added correctly to the cart 	
 	Given I enter to home page
-	And I click on Women>Tops>Jackets
+	And I click on Women
+	And I click on Jackets
 	And I choose Juno Jacket
 	And I choose 'S' size, 'green' color and quantity '2'
 	And I add product to cart
