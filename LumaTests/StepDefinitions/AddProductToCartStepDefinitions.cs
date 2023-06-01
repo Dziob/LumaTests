@@ -29,7 +29,7 @@ namespace LumaTests.StepDefinitions
         public void GivenIClickOnWomen()
         {
             HomePage homepage = new HomePage(driver);
-            homepage.MenuWoman;
+            homepage.MenuWoman();
 
         }
 

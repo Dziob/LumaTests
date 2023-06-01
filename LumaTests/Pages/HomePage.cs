@@ -17,8 +17,8 @@ namespace LumaTests.Pages
             PageFactory.InitElements(driver, this);
         }
 
-        [FindsBy(How = How.XPath, Using = "//li[@class='level0 nav-2 category-item level-top parent ui-menu-item']level0 nav-2 category-item level-top parent ui-menu-item")]
-        IWebElement menuWoman;
+        [FindsBy(How = How.Id, Using = "ui-id-4")]
+        private IWebElement menuWoman;
 
         public void MenuWoman()
         {
