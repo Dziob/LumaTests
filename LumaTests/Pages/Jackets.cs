@@ -3,28 +3,27 @@ using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LumaTests.Pages
 {
-    internal class Woman
+    internal class Jackets
     {
-        public IWebDriver driver;
+        IWebDriver driver;
 
-        public Woman(IWebDriver driver)
+        public Jackets(IWebDriver driver)
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);
         }
 
-        [FindsBy(How = How.XPath, Using = "//a[text() = 'Jackets']")]
-        private IWebElement jackets;
+        [FindsBy(How = How.XPath, Using = "//*[contains(text(),'Juno Jacket')]")]
+        private IWebElement junojacket;
 
-        public void inToJackets()
+        public void inToJuno()
         {
-            jackets.Click();
+            junojacket.Click();
         }
     }
 }

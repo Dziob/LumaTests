@@ -36,13 +36,15 @@ namespace LumaTests.StepDefinitions
         [Given(@"I click on Jackets")]
         public void GivenIClickOnJackets()
         {
-            throw new PendingStepException();
+            Woman woman = new Woman(driver);
+            woman.inToJackets();
         }
 
         [Given(@"I choose Juno Jacket")]
         public void GivenIChooseJunoJacket()
         {
-            throw new PendingStepException();
+            Jackets jackets = new Jackets(driver);  
+            jackets.inToJuno();
         }
 
         [Given(@"I choose '([^']*)' size, '([^']*)' color and quantity '([^']*)'")]
