@@ -7,6 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
+using Coypu;
 
 namespace LumaTests.Pages
 {
@@ -35,6 +38,15 @@ namespace LumaTests.Pages
         [FindsBy(How = How.XPath, Using = "//div[@option-label = 'XL']")]
         IWebElement XL;
 
+        [FindsBy(How = How.XPath, Using = "//div[@option-label = 'Blue']")]
+        IWebElement blue;
+
+        [FindsBy(How = How.XPath, Using = "//div[@option-label = 'Green']")]
+        IWebElement green;
+
+        [FindsBy(How = How.XPath, Using = "//div[@option-label = 'Purple']")]
+        IWebElement purple;
+
         
 
         IWebElement color;
@@ -42,8 +54,12 @@ namespace LumaTests.Pages
         IWebElement qty;
 
 
-        public void ChooseSize(string size)
+        public void ChooseSize(string size, IWebDriver driver)
+
         {
+            WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 0, 5));
+            wait.Until(ExpectedConditions.ElementToBeClickable(XS));
+
             if (size == "XS") {
                 XS.Click();
             } else if (size == "S")
@@ -58,8 +74,27 @@ namespace LumaTests.Pages
             } else if (size == "XL")
             {
                 XL.Click();
-            } else { throw new Exception("No size"); }
+            } else { throw new Exception("There is no that size option, available options; XS, S, M, L, XL."); }
 
+        }
+
+        public void ChooseColor(string color, IWebDriver driver)
+        {
+            if (color == "blue")
+            {
+                blue.Click();
+            } else if (color == "green")
+            {
+                green.Click();
+            } else if(color == "purple")
+            {
+                purple.Click();
+            }else
+            {
+                throw new Exception("There is no that color option, available options; blue, green, purple.");
+            }
+
+            
         }
     }
 }

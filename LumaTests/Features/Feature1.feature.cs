@@ -117,7 +117,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I choose Juno Jacket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
- testRunner.And("I choose \'S\' size, \'green\' color and quantity \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I choose \'XXL\' size, \'green\' color and quantity \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 12
  testRunner.And("I add product to cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

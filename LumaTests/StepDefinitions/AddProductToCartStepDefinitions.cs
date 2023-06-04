@@ -51,7 +51,7 @@ namespace LumaTests.StepDefinitions
         public void GivenIChooseSizeColorAndQuantity(string size, string color, string qty)
         {
             JunoJacket junojacket = new JunoJacket(driver);
-            junojacket.ChooseSize(size);
+            junojacket.ChooseSize(size, driver);
         }
 
         [Given(@"I add product to cart")]
