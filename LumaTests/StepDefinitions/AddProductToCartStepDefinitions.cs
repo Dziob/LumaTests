@@ -48,22 +48,28 @@ namespace LumaTests.StepDefinitions
         }
 
         [Given(@"I choose '([^']*)' size, '([^']*)' color and quantity '([^']*)'")]
-        public void GivenIChooseSizeColorAndQuantity(string size, string color, string qty)
+        public void GivenIChooseSizeColorAndQuantity(string size, string color, string quantity)
         {
             JunoJacket junojacket = new JunoJacket(driver);
             junojacket.ChooseSize(size, driver);
+            junojacket.ChooseColor(color, driver);
+            junojacket.qtyInput(quantity);
+            
         }
 
         [Given(@"I add product to cart")]
         public void GivenIAddProductToCart()
         {
-            throw new PendingStepException();
+            JunoJacket junojacket = new JunoJacket(driver);
+            junojacket.addProductToCart();
+
         }
 
         [Then(@"I can see a message about adding a product to the basket")]
         public void ThenICanSeeAMessageAboutAddingAProductToTheBasket()
         {
-            throw new PendingStepException();
+            JunoJacket junojacket = new JunoJacket(driver);
+            junojacket.confirmAddToCartMessage(driver);
         }
 
         [Then(@"I can see that product in the cart is correct")]

@@ -47,11 +47,14 @@ namespace LumaTests.Pages
         [FindsBy(How = How.XPath, Using = "//div[@option-label = 'Purple']")]
         IWebElement purple;
 
-        
-
-        IWebElement color;
-
+        [FindsBy(How = How.Id, Using = "qty")]
         IWebElement qty;
+
+        [FindsBy(How = How.Id, Using = "product-addtocart-button")]
+        IWebElement addToCartBtn;
+
+        [FindsBy(How = How.XPath, Using = "//*[@id='maincontent']/div[1]/div[2]/div/div/div")]
+        IWebElement pageMessege;
 
 
         public void ChooseSize(string size, IWebDriver driver)
@@ -76,6 +79,7 @@ namespace LumaTests.Pages
                 XL.Click();
             } else { throw new Exception("There is no that size option, available options; XS, S, M, L, XL."); }
 
+
         }
 
         public void ChooseColor(string color, IWebDriver driver)
@@ -95,6 +99,30 @@ namespace LumaTests.Pages
             }
 
             
+        }
+
+        public void qtyInput(string quantity)
+        {
+            qty.Clear();
+            qty.SendKeys(quantity);
+               
+            
+        }
+
+        public void addProductToCart()
+        {
+            addToCartBtn.Click();
+        }
+
+        public void confirmAddToCartMessage (IWebDriver driver)
+        {
+
+            WebDriverWait wait = new WebDriverWait(driver, new TimeSpan (0, 0, 5));
+            
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='maincontent']/div[1]/div[2]/div/div/div")));
+
+            var actualMessage = pageMessege.Text;
+            Assert.AreEqual(actualMessage, "You added Juno Jacket to your shopping cart.");
         }
     }
 }
