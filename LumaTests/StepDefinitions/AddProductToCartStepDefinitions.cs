@@ -1,11 +1,7 @@
-using Coypu.Actions;
-using OpenQA.Selenium;
-using System;
-using System.Security.Policy;
-using TechTalk.SpecFlow;
-using NUnit.Framework;
+
 using OpenQA.Selenium;
 using LumaTests.Pages;
+using OpenQA.Selenium.Chrome;
 
 namespace LumaTests.StepDefinitions
 {
@@ -14,8 +10,10 @@ namespace LumaTests.StepDefinitions
 
     {
         private IWebDriver driver;
+
         private AddProductToCartStepDefinitions() {
             driver = (IWebDriver)ScenarioContext.Current["driver"];
+            
         }
 
         [Given(@"I enter to home page")]
