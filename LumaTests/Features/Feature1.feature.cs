@@ -77,11 +77,20 @@ namespace LumaTests.Features
         [NUnit.Framework.DescriptionAttribute("As a User I enter a product page, choose size, color, and qty, and click on Add t" +
             "o Cart, next, I can confirm that the product is added correctly to the cart")]
         [NUnit.Framework.CategoryAttribute("tag1")]
-        public virtual void AsAUserIEnterAProductPageChooseSizeColorAndQtyAndClickOnAddToCartNextICanConfirmThatTheProductIsAddedCorrectlyToTheCart()
+        [NUnit.Framework.TestCaseAttribute("M", "green", "2", null)]
+        public virtual void AsAUserIEnterAProductPageChooseSizeColorAndQtyAndClickOnAddToCartNextICanConfirmThatTheProductIsAddedCorrectlyToTheCart(string size, string color, string quantity, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "tag1"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("size", size);
+            argumentsOfScenario.Add("color", color);
+            argumentsOfScenario.Add("quantity", quantity);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a User I enter a product page, choose size, color, and qty, and click on Add t" +
                     "o Cart, next, I can confirm that the product is added correctly to the cart", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
@@ -117,7 +126,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I choose Juno Jacket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
- testRunner.And("I choose \'M\' size, \'green\' color and quantity \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I choose \"{0}\", \"{1}\" and \"{2}\"", size, color, quantity), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 12
  testRunner.And("I add product to cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -126,7 +135,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("I can see a message about adding a product to the basket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 14
- testRunner.And("I can see that product in the cart is correct", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I go to the shopping cart by clicking cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
+ testRunner.And(string.Format("I can see that \"{0}\", \"{1}\" and \"{2}\" of the product are correct", size, color, quantity), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -56,6 +56,12 @@ namespace LumaTests.Pages
         [FindsBy(How = How.XPath, Using = "//*[@id='maincontent']/div[1]/div[2]/div/div/div")]
         IWebElement pageMessege;
 
+        [FindsBy(How = How.CssSelector, Using = ".counter-number")]
+        IWebElement shoppingCart;
+
+        [FindsBy(How = How.XPath, Using = "//a[@class='action viewcart']")]
+        IWebElement viewCart;
+
 
         public void ChooseSize(string size, IWebDriver driver)
 
@@ -114,7 +120,7 @@ namespace LumaTests.Pages
             addToCartBtn.Click();
         }
 
-        public void confirmAddToCartMessage (IWebDriver driver)
+        public void ConfirmAddToCartMessage (IWebDriver driver)
         {
 
             WebDriverWait wait = new WebDriverWait(driver, new TimeSpan (0, 0, 5));
@@ -123,6 +129,15 @@ namespace LumaTests.Pages
 
             var actualMessage = pageMessege.Text;
             Assert.AreEqual(actualMessage, "You added Juno Jacket to your shopping cart.");
+        }
+
+        public void ShoppingCartEnter(IWebDriver driver)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            shoppingCart.Click();   
+            wait.Until(ExpectedConditions.ElementToBeClickable(viewCart));
+            viewCart.Click();  
+
         }
     }
 }

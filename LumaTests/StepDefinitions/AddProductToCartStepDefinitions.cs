@@ -45,7 +45,7 @@ namespace LumaTests.StepDefinitions
             jackets.inToJuno();
         }
 
-        [Given(@"I choose '([^']*)' size, '([^']*)' color and quantity '([^']*)'")]
+        [Given("^I choose \"(.*)\", \"(.*)\" and \"(.*)\"$")]
         public void GivenIChooseSizeColorAndQuantity(string size, string color, string quantity)
         {
             JunoJacket junojacket = new JunoJacket(driver);
@@ -67,13 +67,23 @@ namespace LumaTests.StepDefinitions
         public void ThenICanSeeAMessageAboutAddingAProductToTheBasket()
         {
             JunoJacket junojacket = new JunoJacket(driver);
-            junojacket.confirmAddToCartMessage(driver);
+            junojacket.ConfirmAddToCartMessage(driver);
+            
+        }
+        [Then(@"I go to the shopping cart by clicking cart icon")]
+        public void ThenIGoToTheShoppingCartByClickingCartIcon()
+        {
+            JunoJacket junoJacket = new JunoJacket(driver);
+            junoJacket.ShoppingCartEnter(driver);
         }
 
-        [Then(@"I can see that product in the cart is correct")]
-        public void ThenICanSeeThatProductInTheCartIsCorrect()
+
+        [Then("^I can see that \"(.*)\", \"(.*)\" and \"(.*)\" of the product are correct$")]
+        public void ThenICanSeeThatProductInTheCartIsCorrect(string size, string color, string qty)
         {
-            throw new PendingStepException();
+            
+            ShoppingCart shoppingCart = new ShoppingCart(driver);
+            shoppingCart.CheckCart(size, color, qty);
         }
     }
 }
