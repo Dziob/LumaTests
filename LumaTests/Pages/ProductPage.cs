@@ -13,12 +13,12 @@ using Coypu;
 
 namespace LumaTests.Pages
 {
-    internal class JunoJacket
+    internal class ProductPage
     
     {
         IWebDriver driver;
         
-        public JunoJacket(IWebDriver driver)
+        public ProductPage(IWebDriver driver)
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);
@@ -120,7 +120,7 @@ namespace LumaTests.Pages
             addToCartBtn.Click();
         }
 
-        public void ConfirmAddToCartMessage (IWebDriver driver)
+        public void ConfirmAddToCartMessage (IWebDriver driver, string productName)
         {
 
             WebDriverWait wait = new WebDriverWait(driver, new TimeSpan (0, 0, 5));
@@ -128,7 +128,7 @@ namespace LumaTests.Pages
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='maincontent']/div[1]/div[2]/div/div/div")));
 
             var actualMessage = pageMessege.Text;
-            Assert.AreEqual(actualMessage, "You added Juno Jacket to your shopping cart.");
+            Assert.AreEqual(actualMessage, "You added " + productName +" to your shopping cart.");
         }
 
         public void ShoppingCartEnter(IWebDriver driver)

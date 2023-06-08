@@ -38,42 +38,42 @@ namespace LumaTests.StepDefinitions
             woman.inToJackets();
         }
 
-        [Given(@"I choose Juno Jacket")]
-        public void GivenIChooseJunoJacket()
+        [Given("^I choose \"(.*)\"$")]
+        public void GivenIChoose(string productName)
         {
-            Jackets jackets = new Jackets(driver);  
-            jackets.inToJuno();
+            Jackets jackets = new Jackets(driver);
+            jackets.InToProduct(productName);
         }
 
-        [Given("^I choose \"(.*)\", \"(.*)\" and \"(.*)\"$")]
-        public void GivenIChooseSizeColorAndQuantity(string size, string color, string quantity)
+        [Given("^I select \"(.*)\", \"(.*)\" and \"(.*)\"$")]
+        public void GivenISelectAnd(string size, string color, string quantity)
         {
-            JunoJacket junojacket = new JunoJacket(driver);
-            junojacket.ChooseSize(size, driver);
-            junojacket.ChooseColor(color, driver);
-            junojacket.qtyInput(quantity);
-            
+            ProductPage product = new ProductPage(driver);
+            product.ChooseSize(size, driver);
+            product.ChooseColor(color, driver);
+            product.qtyInput(quantity);
         }
+
 
         [Given(@"I add product to cart")]
         public void GivenIAddProductToCart()
         {
-            JunoJacket junojacket = new JunoJacket(driver);
-            junojacket.addProductToCart();
+            ProductPage product = new ProductPage(driver);
+            product.addProductToCart();
 
         }
 
-        [Then(@"I can see a message about adding a product to the basket")]
-        public void ThenICanSeeAMessageAboutAddingAProductToTheBasket()
+        [Then("^I can see a message about adding a \"(.*)\" to the basket$")]
+        public void ThenICanSeeAMessageAboutAddingAProductToTheBasket(string productName)
         {
-            JunoJacket junojacket = new JunoJacket(driver);
-            junojacket.ConfirmAddToCartMessage(driver);
+            ProductPage junojacket = new ProductPage(driver);
+            junojacket.ConfirmAddToCartMessage(driver, productName);
             
         }
         [Then(@"I go to the shopping cart by clicking cart icon")]
         public void ThenIGoToTheShoppingCartByClickingCartIcon()
         {
-            JunoJacket junoJacket = new JunoJacket(driver);
+            ProductPage junoJacket = new ProductPage(driver);
             junoJacket.ShoppingCartEnter(driver);
         }
 

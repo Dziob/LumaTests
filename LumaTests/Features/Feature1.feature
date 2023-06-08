@@ -7,14 +7,15 @@ Scenario Outline: As a User I enter a product page, choose size, color, and qty,
 	Given I enter to home page
 	And I click on Women
 	And I click on Jackets
-	And I choose Juno Jacket
-	And I choose "<size>", "<color>" and "<quantity>"
+	And I choose "<product name>"
+	And I select "<size>", "<color>" and "<quantity>"
 	And I add product to cart
-	Then I can see a message about adding a product to the basket
+	Then I can see a message about adding a "<product name>" to the basket
 	And I go to the shopping cart by clicking cart icon
 	And I can see that "<size>", "<color>" and "<quantity>" of the product are correct 
 
 
 	Examples: 
-	| size | color | quantity |
-	| M    | green | 2        |
+	| product name | size | color | quantity |
+	| Jade Yoga Jacket  | M    | green | 2        |
+
