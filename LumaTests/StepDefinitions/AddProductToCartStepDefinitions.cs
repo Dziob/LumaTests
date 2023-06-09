@@ -11,6 +11,7 @@ namespace LumaTests.StepDefinitions
     {
         private IWebDriver driver;
 
+        [Obsolete]
         private AddProductToCartStepDefinitions() {
             driver = (IWebDriver)ScenarioContext.Current["driver"];
             

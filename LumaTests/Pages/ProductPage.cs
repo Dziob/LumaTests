@@ -26,27 +26,7 @@ namespace LumaTests.Pages
         [FindsBy(How = How.XPath, Using = "//div[@option-label = 'XS']")]
         IWebElement XS;
 
-        [FindsBy(How = How.XPath, Using = "//div[@option-label = 'S']")]
-        IWebElement S;
-
-        [FindsBy(How = How.XPath, Using = "//div[@option-label = 'M']")]
-        IWebElement M;
-
-        [FindsBy(How = How.XPath, Using = "//div[@option-label = 'L']")]
-        IWebElement L;
-
-        [FindsBy(How = How.XPath, Using = "//div[@option-label = 'XL']")]
-        IWebElement XL;
-
-        [FindsBy(How = How.XPath, Using = "//div[@option-label = 'Blue']")]
-        IWebElement blue;
-
-        [FindsBy(How = How.XPath, Using = "//div[@option-label = 'Green']")]
-        IWebElement green;
-
-        [FindsBy(How = How.XPath, Using = "//div[@option-label = 'Purple']")]
-        IWebElement purple;
-
+       
         [FindsBy(How = How.Id, Using = "qty")]
         IWebElement qty;
 
@@ -68,43 +48,19 @@ namespace LumaTests.Pages
         {
             WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 0, 5));
             wait.Until(ExpectedConditions.ElementToBeClickable(XS));
-
-            if (size == "XS") {
-                XS.Click();
-            } else if (size == "S")
-            {
-                S.Click();
-            } else if (size == "M")
-            {
-                M.Click();
-            } else if (size == "L")
-            {
-                L.Click();
-            } else if (size == "XL")
-            {
-                XL.Click();
-            } else { throw new Exception("There is no that size option, available options; XS, S, M, L, XL."); }
+            IWebElement sizeChoose = driver.FindElement(By.XPath("//div[@option-label = '" +size +"']"));
+            sizeChoose.Click();
 
 
         }
 
         public void ChooseColor(string color, IWebDriver driver)
         {
-            if (color == "blue")
-            {
-                blue.Click();
-            } else if (color == "green")
-            {
-                green.Click();
-            } else if(color == "purple")
-            {
-                purple.Click();
-            }else
-            {
-                throw new Exception("There is no that color option, available options; blue, green, purple.");
-            }
-
             
+            IWebElement colorChoose = driver.FindElement(By.XPath("//div[@option-label = '" + color + "']"));
+            colorChoose.Click();
+
+
         }
 
         public void qtyInput(string quantity)

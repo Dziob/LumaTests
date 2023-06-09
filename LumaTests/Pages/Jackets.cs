@@ -18,13 +18,6 @@ namespace LumaTests.Pages
             PageFactory.InitElements(driver, this);
         }
 
-        //[FindsBy(How = How.XPath, Using = "//*[contains(text(),'Juno Jacket')]")]
-       // private IWebElement junojacket;
-
-       /* public void inToJuno()
-        {
-            junojacket.Click();
-        }*/
 
         public void InToProduct(string productName)
         {
