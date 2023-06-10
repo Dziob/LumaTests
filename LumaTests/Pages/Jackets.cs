@@ -21,9 +21,14 @@ namespace LumaTests.Pages
 
         public void InToProduct(string productName)
         {
-
-            IWebElement product = driver.FindElement(By.XPath("//*[contains(text(),'" + productName + "')]"));
-            product.Click();
+            try
+            {
+                IWebElement product = driver.FindElement(By.XPath("//*[contains(text(),'" + productName + "')]"));
+                product.Click();
+            } catch (NoSuchElementException  e)
+            {
+                throw new Exception("There is no such product in this category or the name of the product is misspelled. Check product name, capitalization matters", e);
+            }
             
         }
     }

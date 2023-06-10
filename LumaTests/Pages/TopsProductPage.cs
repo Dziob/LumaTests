@@ -13,12 +13,12 @@ using Coypu;
 
 namespace LumaTests.Pages
 {
-    internal class ProductPage
+    internal class TopsProductPage
     
     {
         IWebDriver driver;
         
-        public ProductPage(IWebDriver driver)
+        public TopsProductPage(IWebDriver driver)
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);
@@ -56,10 +56,16 @@ namespace LumaTests.Pages
 
         public void ChooseColor(string color, IWebDriver driver)
         {
+            try
+            {
+                IWebElement colorChoose = driver.FindElement(By.XPath("//div[@option-label = '" + color + "']"));
+                colorChoose.Click();
+            } catch (NoSuchElementException e)
+            {
+                throw new NoSuchElementException("There is no such color option for this product. Please check the color and text format. Color needs to be written in a big first letter.", e);
+                
+            }
             
-            IWebElement colorChoose = driver.FindElement(By.XPath("//div[@option-label = '" + color + "']"));
-            colorChoose.Click();
-
 
         }
 

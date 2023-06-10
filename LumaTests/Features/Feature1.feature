@@ -17,5 +17,5 @@ Scenario Outline: As a User I enter a product page, choose size, color, and qty,
 
 	Examples: 
 	| product name | size | color | quantity |
-	| Nadia Elements Shell  | XL    | Black | 2        |
+	| Riona Full Zip Jacket  | XS    | Red | 6        |
 
