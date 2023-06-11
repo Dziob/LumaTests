@@ -31,18 +31,18 @@ namespace LumaTests.StepDefinitions
             homepage.MenuWoman();
 
         }
-
-        [Given(@"I click on Jackets")]
-        public void GivenIClickOnJackets()
+        [Given("^I click on \"(.*)\"$")]
+        public void GivenIClickOn(string category)
         {
             Woman woman = new Woman(driver);
-            woman.inToJackets();
+            woman.inToCategory(category);
         }
+
 
         [Given("^I choose \"(.*)\"$")]
         public void GivenIChoose(string productName)
         {
-            Jackets jackets = new Jackets(driver);
+            Category jackets = new Category(driver);
             jackets.InToProduct(productName);
         }
 

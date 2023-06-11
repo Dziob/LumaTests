@@ -19,12 +19,20 @@ namespace LumaTests.Pages
             PageFactory.InitElements(driver, this);
         }
 
-        [FindsBy(How = How.XPath, Using = "//a[text() = 'Jackets']")]
-        private IWebElement jackets;
 
-        public void inToJackets()
+
+        public void inToCategory(string category)
         {
-            jackets.Click();
+            try
+            {
+                IWebElement categoryChoose = driver.FindElement(By.XPath("//a[text() = '" + category + "']")); 
+                categoryChoose.Click();
+            }
+            catch (NoSuchElementException e)
+            {
+                throw new NoSuchElementException("There is no such category option in this section. Please check the color and text format. Category needs to be written in a big first letter.", e);
+
+            }
         }
     }
 }

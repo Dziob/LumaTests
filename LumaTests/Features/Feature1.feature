@@ -6,7 +6,7 @@ A short summary of the feature
 Scenario Outline: As a User I enter a product page, choose size, color, and qty, and click on Add to Cart, next, I can confirm that the product is added correctly to the cart 	
 	Given I enter to home page
 	And I click on Women
-	And I click on Jackets
+	And I click on "<category>"
 	And I choose "<product name>"
 	And I select "<size>", "<color>" and "<quantity>"
 	And I add product to cart
@@ -16,6 +16,6 @@ Scenario Outline: As a User I enter a product page, choose size, color, and qty,
 
 
 	Examples: 
-	| product name | size | color | quantity |
-	| Riona Full Zip Jacket  | XS    | Red | 6        |
-
+	| category | product name          | size | color  | quantity |
+	| Jackets  | Riona Full Zip Jacket | XS   | Red    | 6        |
+	| Jackets  | Inez Full Zip Jacket  | M    | Orange | 1        |
