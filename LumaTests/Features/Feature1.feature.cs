@@ -77,9 +77,9 @@ namespace LumaTests.Features
         [NUnit.Framework.DescriptionAttribute("As a User I enter a product page, choose size, color, and qty, and click on Add t" +
             "o Cart, next, I can confirm that the product is added correctly to the cart")]
         [NUnit.Framework.CategoryAttribute("tag1")]
-        [NUnit.Framework.TestCaseAttribute("Jackets", "Riona Full Zip Jacket", "XS", "Red", "6", null)]
-        [NUnit.Framework.TestCaseAttribute("Jackets", "Inez Full Zip Jacket", "M", "Orange", "1", null)]
-        public virtual void AsAUserIEnterAProductPageChooseSizeColorAndQtyAndClickOnAddToCartNextICanConfirmThatTheProductIsAddedCorrectlyToTheCart(string category, string productName, string size, string color, string quantity, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Woman", "Jackets", "Riona Full Zip Jacket", "XS", "Red", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("What\'s New", "Jackets", "Inez Full Zip Jacket", "M", "Orange", "1", null)]
+        public virtual void AsAUserIEnterAProductPageChooseSizeColorAndQtyAndClickOnAddToCartNextICanConfirmThatTheProductIsAddedCorrectlyToTheCart(string section, string category, string productName, string size, string color, string quantity, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "tag1"};
@@ -89,6 +89,7 @@ namespace LumaTests.Features
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("section", section);
             argumentsOfScenario.Add("category", category);
             argumentsOfScenario.Add("product name", productName);
             argumentsOfScenario.Add("size", size);
@@ -120,7 +121,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I enter to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.And("I click on Women", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("From the menu, I select a \"{0}\"", section), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
  testRunner.And(string.Format("I click on \"{0}\"", category), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

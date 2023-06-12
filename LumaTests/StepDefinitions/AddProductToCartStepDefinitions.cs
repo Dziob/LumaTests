@@ -24,13 +24,14 @@ namespace LumaTests.StepDefinitions
            driver.Navigate().GoToUrl(url);
         }
 
-        [Given(@"I click on Women")]
-        public void GivenIClickOnWomen()
+        [Given("^From the menu, I select a \"(.*)\"$")]
+        public void GivenFromTheMenuISelectA(string section)
         {
             HomePage homepage = new HomePage(driver);
-            homepage.MenuWoman();
-
+            homepage.MenuSection(section);
         }
+
+       
         [Given("^I click on \"(.*)\"$")]
         public void GivenIClickOn(string category)
         {

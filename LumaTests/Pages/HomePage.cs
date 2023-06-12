@@ -21,15 +21,56 @@ namespace LumaTests.Pages
             PageFactory.InitElements(driver, this);
         }
 
-        [FindsBy(How = How.XPath, Using = "//*[@id='ui-id-4']/span[1]")]
-        private IWebElement menuWoman;
 
-        public void MenuWoman() 
+        [FindsBy(How = How.Id, Using = "ui-id-3")]
+        IWebElement menuWhatsNew;
+
+        [FindsBy(How = How.Id, Using = "ui-id-4")]
+        IWebElement menuWoman;
+
+        [FindsBy(How = How.Id, Using = "ui-id-5")]
+        IWebElement menuMen;
+
+        [FindsBy(How = How.Id, Using = "ui-id-6")]
+        IWebElement menuGear;
+
+        [FindsBy(How = How.Id, Using = "ui-id-7")]
+        IWebElement menuTraning;
+
+        [FindsBy(How = How.Id, Using = "ui-id-8")]
+        IWebElement menuSale;
+
+
+
+        public void MenuSection(string section) 
         {
             WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 0, 5));
            
             wait.Until(ExpectedConditions.ElementToBeClickable(menuWoman));
-            menuWoman.Click();
+            
+            if (section== "What's New")
+            {
+                menuWhatsNew.Click();
+            } else if (section == "Woman")
+            {
+                menuWoman.Click();
+            } else if (section == "Men")
+            {
+                menuMen.Click();
+            } else if (section == "Gear")
+            {
+                menuGear.Click();
+            } else if (section == "Training")
+            {
+                menuTraning.Click();
+            } else if (section == "Sale")
+            {
+                menuSale.Click();
+            }
+            else
+            {
+                throw new Exception("There is no such section in the menu. Please check the section name and text format. Sections needs to be written in a big first letter.");
+            }
         }
 
         
