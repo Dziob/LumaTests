@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace LumaTests.Pages
 {
-    internal class Woman
+    internal class Section
     {
         public IWebDriver driver;
 
-        public Woman(IWebDriver driver)
+        public Section(IWebDriver driver)
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);

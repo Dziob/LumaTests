@@ -51,7 +51,7 @@ namespace LumaTests.Pages
             if (section== "What's New")
             {
                 menuWhatsNew.Click();
-            } else if (section == "Woman")
+            } else if (section == "Women")
             {
                 menuWoman.Click();
             } else if (section == "Men")

@@ -35,7 +35,7 @@ namespace LumaTests.StepDefinitions
         [Given("^I click on \"(.*)\"$")]
         public void GivenIClickOn(string category)
         {
-            Woman woman = new Woman(driver);
+            Section woman = new Section(driver);
             woman.inToCategory(category);
         }
 

@@ -16,6 +16,9 @@ Scenario Outline: As a User I enter a product page, choose size, color, and qty,
 
 
 	Examples: 
-	| section | category | product name          | size | color  | quantity |
-	| Woman   | Jackets  | Riona Full Zip Jacket | XS   | Red    | 6        |
-	| What's New | Jackets  | Inez Full Zip Jacket  | M    | Orange | 1        |
+	| section | category               | product name             | size | color  | quantity |
+	|Women| Hoodies & Sweatshirts  | Cassia Funnel Sweatshirt | XS   | Orange | 1        |
+	| Men     | Pants                  | Zeppelin Yoga Pant       | 36   | Blue   | 2        |
+	| Sale    | Bras & Tanks           | Prima Compete Bra Top    | XL   | Yellow | 3        |
+
+	

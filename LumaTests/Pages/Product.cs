@@ -47,10 +47,15 @@ namespace LumaTests.Pages
 
         {
             WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 0, 5));
-            wait.Until(ExpectedConditions.ElementToBeClickable(XS));
-            IWebElement sizeChoose = driver.FindElement(By.XPath("//div[@option-label = '" +size +"']"));
-            sizeChoose.Click();
-
+            wait.Until(ExpectedConditions.ElementToBeClickable(addToCartBtn));
+            try
+            {
+                IWebElement sizeChoose = driver.FindElement(By.XPath("//div[@option-label = '" + size + "']"));
+                sizeChoose.Click();
+            } catch (Exception ex)
+            {
+                throw new NoSuchElementException("There is no such size option for this product.");
+            }
 
         }
 
@@ -85,7 +90,7 @@ namespace LumaTests.Pages
         public void ConfirmAddToCartMessage (IWebDriver driver, string productName)
         {
 
-            WebDriverWait wait = new WebDriverWait(driver, new TimeSpan (0, 0, 5));
+            WebDriverWait wait = new WebDriverWait(driver, new TimeSpan (0, 0, 15));
             
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='maincontent']/div[1]/div[2]/div/div/div")));
 
