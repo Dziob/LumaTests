@@ -77,9 +77,7 @@ namespace LumaTests.Features
         [NUnit.Framework.DescriptionAttribute("As a User I enter a product page, choose size, color, and qty, and click on Add t" +
             "o Cart, next, I can confirm that the product is added correctly to the cart")]
         [NUnit.Framework.CategoryAttribute("tag1")]
-        [NUnit.Framework.TestCaseAttribute("Women", "Hoodies & Sweatshirts", "Cassia Funnel Sweatshirt", "XS", "Orange", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("Men", "Pants", "Zeppelin Yoga Pant", "36", "Blue", "2", null)]
-        [NUnit.Framework.TestCaseAttribute("Sale", "Bras & Tanks", "Prima Compete Bra Top", "XL", "Yellow", "3", null)]
+        [NUnit.Framework.TestCaseAttribute("What\'s New", "Woman\'s Jackets", "Olivia 1/4 Zip Light Jacket", "XS", "Pink", "1", null)]
         public virtual void AsAUserIEnterAProductPageChooseSizeColorAndQtyAndClickOnAddToCartNextICanConfirmThatTheProductIsAddedCorrectlyToTheCart(string section, string category, string productName, string size, string color, string quantity, string[] exampleTags)
         {
             string[] @__tags = new string[] {

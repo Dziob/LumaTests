@@ -18,15 +18,85 @@ namespace LumaTests.Pages
             this.driver = driver;
             PageFactory.InitElements(driver, this);
         }
+        [FindsBy(How = How.ClassName, Using = "base")]
+        IWebElement sectionTitle;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul/li[1]")]
+        IWebElement WNWomenHoodies;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul/li[2]")]
+        IWebElement WNWomenJackets;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul/li[3]")]
+        IWebElement WNWomenTees;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul/li[4]")]
+        IWebElement WNWomenBras;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul/li[5]")]
+        IWebElement WNWomenPants;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul/li[6]")]
+        IWebElement WNWomenShorts;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul[2]/li[1]")]
+        IWebElement WNMenHoodies;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul[2]/li[2]")]
+        IWebElement WNMenJackets;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul[2]/li[3]")]
+        IWebElement WNMenTees;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul[2]/li[4]")]
+        IWebElement WNMenTanks;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul[2]/li[5]")]
+        IWebElement WNMenPants;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul[2]/li[6]")]
+        IWebElement WNMenShorts;
+
+
+     
+
 
 
 
         public void inToCategory(string category)
         {
+
+            
+           
             try
             {
-                IWebElement categoryChoose = driver.FindElement(By.XPath("//a[text() = '" + category + "']")); 
-                categoryChoose.Click();
+                string sectionName = sectionTitle.Text;
+                if (sectionName == "What's New" )
+                {
+                    if (category == "Woman's Hoodies & Sweatshirts")
+                    {
+                        WNWomenHoodies.Click();
+                    } else if (category == "Woman's Jackets")
+                    {
+                        WNWomenJackets.Click();
+                    } else if(category == "Woman's Tees")
+                    {
+                        WNWomenTees.Click();
+                    } else if(category == "Woman's Bras & Tanks")
+                    {
+                        WNWomenBras.Click();
+                    } else if(category == "Woman's Pants")
+                    {
+                        WNWomenPants.Click();   
+                    } else if(category == "Woman's Shorts")
+                    {
+                        WNWomenShorts.Click();
+                    }
+                } 
+
+                
+                //IWebElement categoryChoose = driver.FindElement(By.XPath("//a[text() = '" + category + "']")); 
+                //categoryChoose.Click();
             }
             catch (NoSuchElementException e)
             {
