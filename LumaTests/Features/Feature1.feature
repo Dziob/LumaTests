@@ -17,7 +17,7 @@ Scenario Outline: As a User I enter a product page, choose size, color, and qty,
 
 	Examples: 
 	| section | category               | product name             | size | color  | quantity |
-	|What's New| Woman's Jackets  | Olivia 1/4 Zip Light Jacket | XS   | Pink | 1        |
+	|Women| Hoodies & Sweatshirts  | Circe Hooded Ice Fleece | XS   | Purple | 1        |
 	
 
 	

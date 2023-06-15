@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,9 +67,10 @@ namespace LumaTests.Pages
 
         public void inToCategory(string category)
         {
-
             
-           
+
+
+
             try
             {
                 string sectionName = sectionTitle.Text;
@@ -92,11 +95,14 @@ namespace LumaTests.Pages
                     {
                         WNWomenShorts.Click();
                     }
-                } 
+                } else 
+                {
+                    IWebElement categoryChoose = driver.FindElement(By.XPath("//a[text() = '" + category + "']")); 
+                    categoryChoose.Click();
+                }
 
-                
-                //IWebElement categoryChoose = driver.FindElement(By.XPath("//a[text() = '" + category + "']")); 
-                //categoryChoose.Click();
+
+
             }
             catch (NoSuchElementException e)
             {
