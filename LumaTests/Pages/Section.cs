@@ -59,6 +59,20 @@ namespace LumaTests.Pages
         [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul[2]/li[6]")]
         IWebElement WNMenShorts;
 
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul[3]/li[1]")]
+        IWebElement saleBages;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul[3]/li[2]")]
+        IWebElement saleFitnessEqp;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul[1]/li[1]")]
+        IWebElement bags;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul[1]/li[2]")]
+        IWebElement fitnessEquipment;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul[1]/li[3]")]
+        IWebElement watches;
 
      
 
@@ -74,7 +88,7 @@ namespace LumaTests.Pages
             try
             {
                 string sectionName = sectionTitle.Text;
-                if (sectionName == "What's New" )
+                if (sectionName == "What's New" | sectionName == "Sale")
                 {
                     if (category == "Woman's Hoodies & Sweatshirts")
                     {
@@ -94,13 +108,50 @@ namespace LumaTests.Pages
                     } else if(category == "Woman's Shorts")
                     {
                         WNWomenShorts.Click();
+                    } else if( category =="Men's Hoodies & Sweatshirts")
+                    {
+                        WNMenHoodies.Click();
+                    } else if(category == "Men's Jackets")
+                    {
+                        WNMenJackets.Click();   
+                    } else if(category == "Men's Tees")
+                    {
+                        WNMenTees.Click();
+                    } else if(category == "Men's Tanks")
+                    {
+                        WNMenTanks.Click();
+                    } else if(category == "Men's Pants")
+                    {
+                        WNMenPants.Click();
+                    } else if(category == "Men's Shorts")
+                    {
+                        WNMenShorts.Click();
+                    } else if(category == "Bags")
+                    {
+                        saleBages.Click();
+                    } else if(category == "Fitness Equipment")
+                    {
+                        saleFitnessEqp.Click();
+                    }
+                } else if (sectionName == "Gear")
+                {
+                    if (category == "Bags")
+                    {
+                        bags.Click();
+                    }
+                    else if (category == "Fitness Equipment")
+                    {
+                        fitnessEquipment.Click();
+                    }
+                    else if (category == "Watches")
+                    {
+                        watches.Click();
                     }
                 } else 
                 {
                     IWebElement categoryChoose = driver.FindElement(By.XPath("//a[text() = '" + category + "']")); 
                     categoryChoose.Click();
                 }
-
 
 
             }

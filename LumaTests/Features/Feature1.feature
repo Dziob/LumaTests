@@ -17,7 +17,9 @@ Scenario Outline: As a User I enter a product page, choose size, color, and qty,
 
 	Examples: 
 	| section | category               | product name             | size | color  | quantity |
-	|Women| Hoodies & Sweatshirts  | Circe Hooded Ice Fleece | XS   | Purple | 1        |
+	|What's New| Men's Jackets  | Proteus Fitness Jackshirt | L   | Black | 1        |
+	|Women| Jackets  | Nadia Elements Shell | XS   | Yellow | 2       |
+	|Sale| Woman's Bras & Tanks  | Antonia Racer Tank | M   | Purple | 3       |
 	
 
 	
