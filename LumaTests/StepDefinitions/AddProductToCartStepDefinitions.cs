@@ -44,7 +44,7 @@ namespace LumaTests.StepDefinitions
         public void GivenIChoose(string productName)
         {
             Category jackets = new Category(driver);
-            jackets.InToProduct(productName);
+            jackets.InToProduct(productName, driver);
         }
 
         [Given("^I select \"(.*)\", \"(.*)\" and \"(.*)\"$")]

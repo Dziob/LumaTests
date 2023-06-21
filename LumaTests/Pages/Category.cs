@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,10 +21,12 @@ namespace LumaTests.Pages
         }
 
 
-        public void InToProduct(string productName)
+        public void InToProduct(string productName, IWebDriver driver)
         {
             try
             {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+                wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//li[1][@class = 'item product product-item']")));
                 IWebElement product = driver.FindElement(By.XPath("//*[contains(text(),'" + productName + "')]"));
                 product.Click();
             } catch (NoSuchElementException  e)

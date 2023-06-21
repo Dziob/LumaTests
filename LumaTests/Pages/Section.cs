@@ -88,7 +88,7 @@ namespace LumaTests.Pages
             try
             {
                 string sectionName = sectionTitle.Text;
-                if (sectionName == "What's New" | sectionName == "Sale")
+                if (sectionName == "What's New")
                 {
                     if (category == "Woman's Hoodies & Sweatshirts")
                     {
@@ -96,40 +96,98 @@ namespace LumaTests.Pages
                     } else if (category == "Woman's Jackets")
                     {
                         WNWomenJackets.Click();
-                    } else if(category == "Woman's Tees")
+                    } else if (category == "Woman's Tees")
                     {
                         WNWomenTees.Click();
-                    } else if(category == "Woman's Bras & Tanks")
+                    } else if (category == "Woman's Bras & Tanks")
                     {
                         WNWomenBras.Click();
-                    } else if(category == "Woman's Pants")
+                    } else if (category == "Woman's Pants")
                     {
-                        WNWomenPants.Click();   
-                    } else if(category == "Woman's Shorts")
+                        WNWomenPants.Click();
+                    } else if (category == "Woman's Shorts")
                     {
                         WNWomenShorts.Click();
-                    } else if( category =="Men's Hoodies & Sweatshirts")
+                    } else if (category == "Men's Hoodies & Sweatshirts")
                     {
                         WNMenHoodies.Click();
-                    } else if(category == "Men's Jackets")
+                    } else if (category == "Men's Jackets")
                     {
-                        WNMenJackets.Click();   
-                    } else if(category == "Men's Tees")
+                        WNMenJackets.Click();
+                    } else if (category == "Men's Tees")
                     {
                         WNMenTees.Click();
-                    } else if(category == "Men's Tanks")
+                    } else if (category == "Men's Tanks")
                     {
                         WNMenTanks.Click();
-                    } else if(category == "Men's Pants")
+                    } else if (category == "Men's Pants")
                     {
                         WNMenPants.Click();
-                    } else if(category == "Men's Shorts")
+                    } else if (category == "Men's Shorts")
                     {
                         WNMenShorts.Click();
-                    } else if(category == "Bags")
+                    } else if (category == "Bags")
                     {
                         saleBages.Click();
-                    } else if(category == "Fitness Equipment")
+                    } else if (category == "Fitness Equipment")
+                    {
+                        saleFitnessEqp.Click();
+                    }
+                }else if (sectionName == "Sale")
+                {
+                    if (category == "Woman's Hoodies & Sweatshirts")
+                    {
+                        WNWomenHoodies.Click();
+                    }
+                    else if (category == "Woman's Jackets")
+                    {
+                        WNWomenJackets.Click();
+                    }
+                    else if (category == "Woman's Tees")
+                    {
+                        WNWomenTees.Click();
+                    }
+                    else if (category == "Woman's Bras & Tanks")
+                    {
+                        WNWomenBras.Click();
+                    }
+                    else if (category == "Woman's Pants")
+                    {
+                        WNWomenPants.Click();
+                    }
+                    else if (category == "Woman's Shorts")
+                    {
+                        WNWomenShorts.Click();
+                    }
+                    else if (category == "Men's Hoodies & Sweatshirts")
+                    {
+                        WNMenHoodies.Click();
+                    }
+                    else if (category == "Men's Jackets")
+                    {
+                        WNMenJackets.Click();
+                    }
+                    else if (category == "Men's Tees")
+                    {
+                        WNMenTees.Click();
+                    }
+                    else if (category == "Men's Tanks")
+                    {
+                        WNMenTanks.Click();
+                    }
+                    else if (category == "Men's Pants")
+                    {
+                        WNMenPants.Click();
+                    }
+                    else if (category == "Men's Shorts")
+                    {
+                        WNMenShorts.Click();
+                    }
+                    else if (category == "Bags")
+                    {
+                        saleBages.Click();
+                    }
+                    else if (category == "Fitness Equipment")
                     {
                         saleFitnessEqp.Click();
                     }
