@@ -1,4 +1,4 @@
-﻿Feature: Add product to cart
+﻿Feature: Add product from category 'Women' and 'Men' to cart
 
 A short summary of the feature
 
@@ -16,10 +16,8 @@ Scenario Outline: As a User I enter a product page, choose size, color, and qty,
 
 
 	Examples: 
-	| section | category               | product name             | size | color  | quantity |
-	|What's New| Men's Jackets  | Proteus Fitness Jackshirt | L   | Black | 1        |
-	|Women| Jackets  | Nadia Elements Shell | XS   | Yellow | 2       |
-	|Sale| Woman's Bras & Tanks  | Antonia Racer Tank | M   | Purple | 3       |
-	
+	| section | category | product name        | size | color  | quantity |
+	| Women   | Tees     | Layla Tee           | M    | Green  | 4        |
+	| Men     | Pants    | Caesar Warm-Up Pant | 36   | Purple | 1        |
 
 	

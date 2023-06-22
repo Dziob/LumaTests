@@ -6,13 +6,13 @@ using OpenQA.Selenium.Chrome;
 namespace LumaTests.StepDefinitions
 {
     [Binding]
-    public class AddProductToCartStepDefinitions
+    public class WomenAndMenAddToCartStepDefinitions
 
     {
         private IWebDriver driver;
 
         [Obsolete]
-        private AddProductToCartStepDefinitions() {
+        private WomenAndMenAddToCartStepDefinitions() {
             driver = (IWebDriver)ScenarioContext.Current["driver"];
             
         }
@@ -36,7 +36,7 @@ namespace LumaTests.StepDefinitions
         public void GivenIClickOn(string category)
         {
             Section woman = new Section(driver);
-            woman.inToCategory(category);
+            woman.inToWomenMan(category);
         }
 
 

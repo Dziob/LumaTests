@@ -20,22 +20,22 @@ namespace LumaTests.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Add product to cart")]
-    public partial class AddProductToCartFeature
+    [NUnit.Framework.DescriptionAttribute("Add product from category \'Women\' and \'Men\' to cart")]
+    public partial class AddProductFromCategoryWomenAndMenToCartFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "Feature1.feature"
+#line 1 "WomenAndMenAddToCart.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Add product to cart", "A short summary of the feature", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Add product from category \'Women\' and \'Men\' to cart", "A short summary of the feature", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -77,9 +77,8 @@ namespace LumaTests.Features
         [NUnit.Framework.DescriptionAttribute("As a User I enter a product page, choose size, color, and qty, and click on Add t" +
             "o Cart, next, I can confirm that the product is added correctly to the cart")]
         [NUnit.Framework.CategoryAttribute("tag1")]
-        [NUnit.Framework.TestCaseAttribute("What\'s New", "Men\'s Jackets", "Proteus Fitness Jackshirt", "L", "Black", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("Women", "Jackets", "Nadia Elements Shell", "XS", "Yellow", "2", null)]
-        [NUnit.Framework.TestCaseAttribute("Sale", "Woman\'s Bras & Tanks", "Antonia Racer Tank", "M", "Purple", "3", null)]
+        [NUnit.Framework.TestCaseAttribute("Women", "Tees", "Layla Tee", "M", "Green", "4", null)]
+        [NUnit.Framework.TestCaseAttribute("Men", "Pants", "Caesar Warm-Up Pant", "36", "Purple", "1", null)]
         public virtual void AsAUserIEnterAProductPageChooseSizeColorAndQtyAndClickOnAddToCartNextICanConfirmThatTheProductIsAddedCorrectlyToTheCart(string section, string category, string productName, string size, string color, string quantity, string[] exampleTags)
         {
             string[] @__tags = new string[] {
