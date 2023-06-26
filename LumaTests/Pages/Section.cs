@@ -93,5 +93,32 @@ namespace LumaTests.Pages
 
             }
         }
+
+        public void inToWhatsNewAndSale(string category)
+        {
+            try
+            {
+                if (category == "Women's Hoodies and Sweatshirts")
+                {
+                    WNWomenHoodies.Click();
+
+                } else if (category == "Women's Jackets")
+                {
+                    WNWomenJackets.Click();
+                } else if (category == "Women's Tees")
+                {
+                    WNWomenTees.Click();
+                } else if (category == "Women's Bras & Tanks")
+                {
+                    WNWomenBras.Click();
+                } else if (category == "Women's Pants")
+                {
+                    WNWomenPants.Click();
+                } else if (category == "Women's Shorts")
+                {
+                    WNWomenShorts.Click();
+                }
+            } catch (Exception e) { }
+        }
     }
 }

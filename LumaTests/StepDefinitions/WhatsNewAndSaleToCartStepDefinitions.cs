@@ -1,3 +1,5 @@
+using LumaTests.Pages;
+using OpenQA.Selenium;
 using System;
 using TechTalk.SpecFlow;
 
@@ -6,22 +8,27 @@ namespace LumaTests.StepDefinitions
     [Binding]
     public class WhatsNewAndSaleToCartStepDefinitions
     {
+        public IWebDriver driver;
+
         [Given(@"I am on home page")]
         public void GivenIAmOnHomePage()
         {
-            throw new PendingStepException();
+            string url = "https://magento.softwaretestingboard.com/";
+            driver.Navigate().GoToUrl(url);
         }
 
-        [Given(@"From the menu, I choose a ""([^""]*)""")]
-        public void GivenFromTheMenuIChooseA(string p0)
+        [Given("^From the menu, I choose a \"(.*)\"$")]
+        public void GivenFromTheMenuIChooseA(string section)
         {
-            throw new PendingStepException();
+            HomePage homepage = new HomePage(driver);
+            homepage.MenuSection(section);
         }
 
-        [Given(@"I enter ""([^""]*)""")]
-        public void GivenIEnter(string tees)
+        [Given("^I enter \"(.*)\"$ ['Women's' or 'Men's' + category name]")]
+        public void GivenIEnter(string category)
         {
-            throw new PendingStepException();
+            Section section = new Section(driver);
+            section.
         }
 
         [Given(@"I click ""([^""]*)""")]
