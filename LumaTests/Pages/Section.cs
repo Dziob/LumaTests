@@ -117,8 +117,29 @@ namespace LumaTests.Pages
                 } else if (category == "Women's Shorts")
                 {
                     WNWomenShorts.Click();
+                } else if (category == "Man's Hoodies & Sweatshirts")
+                {
+                    WNMenHoodies.Click();
+                } else if (category == "Man's Jackets")
+                {
+                    WNMenJackets.Click();
+                } else if(category == "Man's Tees")
+                {
+                    WNMenTees.Click();
+                } else if (category == "Man's Tanks")
+                {
+                    WNMenTanks.Click(); 
+                } else if (category == "Man's Pants")
+                {
+                    WNMenPants.Click();
+                } else if (category == "Man's Shorts")
+                {
+                    WNMenShorts.Click();
                 }
-            } catch (Exception e) { }
+            } catch (Exception e) {
+
+                throw new NoSuchElementException("There is no such category option in this section. Please check the color and text format. Category needs to be written in a big first letter.", e);
+            }
         }
     }
 }

@@ -28,7 +28,7 @@ namespace LumaTests.StepDefinitions
         public void GivenIEnter(string category)
         {
             Section section = new Section(driver);
-            section.
+            section.inToWhatsNewAndSale(category);
         }
 
         [Given(@"I click ""([^""]*)""")]
