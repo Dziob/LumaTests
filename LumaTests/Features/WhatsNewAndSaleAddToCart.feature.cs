@@ -125,7 +125,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And(string.Format("From the menu, I choose a \"{0}\"", section), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
- testRunner.And(string.Format("I enter \"{0}\" [\'Women\'s\' or \'Men\'s\' + category name]", category), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I enter \"{0}\"", category), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
  testRunner.And(string.Format("I click \"{0}\"", productName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

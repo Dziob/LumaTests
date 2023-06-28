@@ -6,7 +6,7 @@ A short summary of the feature
 Scenario Outline: As a User I enter What's New or Sale section, then I choose category and enter product page, choose size, color, and qty, and click on Add to Cart, next, I can confirm that the product is added correctly to the cart 	
 	Given I am on home page
 	And From the menu, I choose a "<section>"
-	And I enter "<category>" ['Women's' or 'Men's' + category name]
+	And I enter "<category>"
 	And I click "<product name>"
 	And Then I choose "<size>", "<color>" and "<quantity>"
 	And I click on 'Add to cart'
@@ -16,7 +16,7 @@ Scenario Outline: As a User I enter What's New or Sale section, then I choose ca
 
 
 	Examples: 
-	| section | category | product name        | size | color  | quantity |
-	| What's New   | Tees     | Layla Tee           | M    | Green  | 4        |
+	| section		| category | product name        | size | color  | quantity |
+	| What's New    | Tees     | Layla Tee           | M    | Green  | 4        |
 	
 	 

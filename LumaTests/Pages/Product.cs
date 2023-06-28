@@ -13,12 +13,11 @@ using Coypu;
 
 namespace LumaTests.Pages
 {
-    internal class TopsProductPage
-    
+    internal class Product
     {
         IWebDriver driver;
         
-        public TopsProductPage(IWebDriver driver)
+        public Product(IWebDriver driver)
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);

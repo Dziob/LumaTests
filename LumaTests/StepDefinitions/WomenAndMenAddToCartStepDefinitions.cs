@@ -47,10 +47,10 @@ namespace LumaTests.StepDefinitions
             jackets.InToProduct(productName, driver);
         }
 
-        [Given("^I select \"(.*)\", \"(.*)\" and \"(.*)\"$")]
+        [Given("^I select \"(.*)\" , \"(.*)\" and \"(.*)\"$")]
         public void GivenISelectAnd(string size, string color, string quantity)
         {
-            TopsProductPage product = new TopsProductPage(driver);
+            Product product = new Product(driver);
             product.ChooseSize(size, driver);
             product.ChooseColor(color, driver);
             product.qtyInput(quantity);
@@ -60,7 +60,7 @@ namespace LumaTests.StepDefinitions
         [Given(@"I add product to cart")]
         public void GivenIAddProductToCart()
         {
-            TopsProductPage product = new TopsProductPage(driver);
+            Product product = new Product(driver);
             product.addProductToCart();
 
         }
@@ -68,14 +68,14 @@ namespace LumaTests.StepDefinitions
         [Then("^I can see a message about adding a \"(.*)\" to the basket$")]
         public void ThenICanSeeAMessageAboutAddingAProductToTheBasket(string productName)
         {
-            TopsProductPage junojacket = new TopsProductPage(driver);
+            Product junojacket = new Product(driver);
             junojacket.ConfirmAddToCartMessage(driver, productName);
             
         }
         [Then(@"I go to the shopping cart by clicking cart icon")]
         public void ThenIGoToTheShoppingCartByClickingCartIcon()
         {
-            TopsProductPage junoJacket = new TopsProductPage(driver);
+            Product junoJacket = new Product(driver);
             junoJacket.ShoppingCartEnter(driver);
         }
 

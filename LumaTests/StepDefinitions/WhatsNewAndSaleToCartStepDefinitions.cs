@@ -2,6 +2,7 @@ using LumaTests.Pages;
 using OpenQA.Selenium;
 using System;
 using TechTalk.SpecFlow;
+using static java.util.Locale;
 
 namespace LumaTests.StepDefinitions
 {
@@ -9,6 +10,12 @@ namespace LumaTests.StepDefinitions
     public class WhatsNewAndSaleToCartStepDefinitions
     {
         public IWebDriver driver;
+
+        private WhatsNewAndSaleToCartStepDefinitions()
+        {
+            driver = (IWebDriver)ScenarioContext.Current["driver"];
+
+        }
 
         [Given(@"I am on home page")]
         public void GivenIAmOnHomePage()
@@ -24,23 +31,30 @@ namespace LumaTests.StepDefinitions
             homepage.MenuSection(section);
         }
 
-        [Given("^I enter \"(.*)\"$ ['Women's' or 'Men's' + category name]")]
+   
+        [Given("^I enter \"(.*)\"$")]
         public void GivenIEnter(string category)
         {
             Section section = new Section(driver);
             section.inToWhatsNewAndSale(category);
         }
 
-        [Given(@"I click ""([^""]*)""")]
-        public void GivenIClick(string p0)
+
+
+        [Given("^I click \"(.*)\"$")]
+        public void GivenIClick(string productName)
         {
-            throw new PendingStepException();
+            Pages.Category category = new Pages.Category(driver);
+            category.InToProduct(productName, driver);
         }
 
-        [Given(@"Then I choose ""([^""]*)"", ""([^""]*)"" and ""([^""]*)""")]
-        public void GivenThenIChooseAnd(string m, string green, string p2)
+        [Given("^Then I choose \"(.*)\", \"(.*)\" and \"(.*)\"$")]
+        public void GivenThenIChooseAnd(string size, string color, string quantity)
         {
-            throw new PendingStepException();
+            Product product = new Product(driver);
+            product.ChooseSize(size, driver);
+            product.ChooseColor(color, driver);
+            product.qtyInput(quantity);
         }
 
         [Given(@"I click on '([^']*)'")]
