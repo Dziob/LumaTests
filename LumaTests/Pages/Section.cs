@@ -94,10 +94,12 @@ namespace LumaTests.Pages
             }
         }
 
-        public void inToWhatsNewAndSale(string category)
+        public void inToWhatsNewAndSale(string category, IWebDriver driver)
         {
             try
-            {
+            { WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(5));
+                wait.Until(ExpectedConditions.ElementToBeClickable(sectionTitle));
+
                 if (category == "Women's Hoodies and Sweatshirts")
                 {
                     WNWomenHoodies.Click();

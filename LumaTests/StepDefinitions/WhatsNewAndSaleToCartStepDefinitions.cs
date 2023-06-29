@@ -36,7 +36,7 @@ namespace LumaTests.StepDefinitions
         public void GivenIEnter(string category)
         {
             Section section = new Section(driver);
-            section.inToWhatsNewAndSale(category);
+            section.inToWhatsNewAndSale(category, driver);
         }
 
 
