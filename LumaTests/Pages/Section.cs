@@ -74,18 +74,19 @@ namespace LumaTests.Pages
         [FindsBy(How = How.XPath, Using = "//div[@class = 'categories-menu']/ul[1]/li[3]")]
         IWebElement watches;
 
-     
+
 
 
 
 
         public void inToWomenMan(string category)
         {
-            try { 
-       
-                    IWebElement categoryChoose = driver.FindElement(By.XPath("//a[text() = '" + category + "']")); 
-                    categoryChoose.Click();
-     
+            try
+            {
+
+                IWebElement categoryChoose = driver.FindElement(By.XPath("//a[text() = '" + category + "']"));
+                categoryChoose.Click();
+
             }
             catch (NoSuchElementException e)
             {
@@ -96,52 +97,39 @@ namespace LumaTests.Pages
 
         public void inToWhatsNewAndSale(string category, IWebDriver driver)
         {
-            try
-            { WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(5));
-                wait.Until(ExpectedConditions.ElementToBeClickable(sectionTitle));
 
-                if (category == "Women's Hoodies and Sweatshirts")
-                {
+            switch (category)
+            {
+                case "Women's Hoodies and Sweatshirts":
                     WNWomenHoodies.Click();
-
-                } else if (category == "Women's Jackets")
-                {
+                    break;
+                case "Women's Jackets":
                     WNWomenJackets.Click();
-                } else if (category == "Women's Tees")
-                {
+                    break;
+                case "Women's Tees":
                     WNWomenTees.Click();
-                } else if (category == "Women's Bras & Tanks")
-                {
-                    WNWomenBras.Click();
-                } else if (category == "Women's Pants")
-                {
+                    break;
+                case "Women's Bras & Tanks":
+                    WNWomenBras.Click();    
+                    break;
+                case "Women's Pants":
+                    WNWomenPants.Click();   
+                    break;
+                case "Women's Shorts":
                     WNWomenPants.Click();
-                } else if (category == "Women's Shorts")
-                {
-                    WNWomenShorts.Click();
-                } else if (category == "Man's Hoodies & Sweatshirts")
-                {
-                    WNMenHoodies.Click();
-                } else if (category == "Man's Jackets")
-                {
-                    WNMenJackets.Click();
-                } else if(category == "Man's Tees")
-                {
-                    WNMenTees.Click();
-                } else if (category == "Man's Tanks")
-                {
-                    WNMenTanks.Click(); 
-                } else if (category == "Man's Pants")
-                {
-                    WNMenPants.Click();
-                } else if (category == "Man's Shorts")
-                {
-                    WNMenShorts.Click();
-                }
-            } catch (Exception e) {
-
-                throw new NoSuchElementException("There is no such category option in this section. Please check the color and text format. Category needs to be written in a big first letter.", e);
+                    break;
+                    default: throw new NotImplementedException("There is no such category option in this section. Please check the color and text format. Category needs to be written in a big first letter.");
             }
         }
     }
+           
+
 }
+
+        
+        
+   
+
+        
+    
+
