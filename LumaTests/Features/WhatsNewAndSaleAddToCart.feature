@@ -17,6 +17,6 @@ Scenario Outline: As a User I enter What's New or Sale section, then I choose ca
 
 	Examples: 
 	| section		| category | product name        | size | color  | quantity |
-	| What's New    | Women's Hoodies and Sweatshirts     | Circe Hooded Ice Fleece  | M    | Green  | 4        |
+	| What's New    | Women's Jackets | Circe Hooded Ice Fleece  | M    | Green  | 4        |
 	
 	 

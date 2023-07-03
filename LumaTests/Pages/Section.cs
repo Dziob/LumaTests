@@ -97,6 +97,9 @@ namespace LumaTests.Pages
 
         public void inToWhatsNewAndSale(string category, IWebDriver driver)
         {
+            WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 0, 5));
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(WNMenShorts));
 
             switch (category)
             {
